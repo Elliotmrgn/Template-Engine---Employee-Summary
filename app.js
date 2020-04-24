@@ -7,7 +7,6 @@ const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-console.log("OUTPUT_DIR", OUTPUT_DIR)
 
 const render = require("./lib/htmlRenderer");
 
