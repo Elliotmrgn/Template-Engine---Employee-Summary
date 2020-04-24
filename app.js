@@ -71,7 +71,7 @@ async function userInput() {
                     })
                         .then(office => {
 
-                            employees.push(new Manager(res.name, res.email, res.id, office.office))
+                            employees.push(new Manager(res.name, res.id, res.email, office.office))
 
                         })
                     break;
@@ -82,7 +82,7 @@ async function userInput() {
                         message: "What is your GitHub?"
                     })
                         .then(github => {
-                            employees.push(new Engineer(res.name, res.email, res.id, github.github))
+                            employees.push(new Engineer(res.name, res.id, res.email, github.github))
 
                         })
                     break;
@@ -93,7 +93,7 @@ async function userInput() {
                         message: "What is your School?"
                     })
                         .then(school => {
-                            employees.push(new Intern(res.name, res.email, res.id, school.school))
+                            employees.push(new Intern(res.name, res.id, res.email, school.school))
 
                         })
                     break;
@@ -107,7 +107,6 @@ async function userInput() {
 async function init() {
     await userInput().then(() => {
         const html = render(employees);
-        console.log("init -> html", html)
         if (!fs.existsSync(OUTPUT_DIR)) {
             fs.mkdirSync(OUTPUT_DIR);
         }
